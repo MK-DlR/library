@@ -7,9 +7,11 @@ PROJECT
     1c. create a separate function
         - that can take some arguments
         - create a book from those arguments
-        - and store the new book object in the array
+        - and store the new book object in the array (push)
+    Wip
     1d. all book objects should have a unique id
         - can be created using `crypto.randomUUID()`
+    Done
 
 2. create a function
     2a. that loops through the array (1)
