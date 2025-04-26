@@ -1,2 +1,44 @@
 PROJECT
-1. 
+1. all book objects to be stored in an array
+    1a. create array to store books
+    1b. create constructor for books
+    1c. create a separate function
+        - that can take some arguments
+        - create a book from those arguments
+        - and store the new book object in the array
+    1d. all book objects should have a unique id
+        - can be created using `crypto.randomUUID()`
+
+2. create a function
+    2a. that loops through the array (1)
+    2b. and displays each book on the page
+        - can be displayed in a table
+        - or in their own "card"
+    2c. tip: manually add a few books to the array
+        - so the display can be seen
+
+3. add a "new book" button
+    3a. that brings up a form 
+        - that allows users to input the details of the book
+            - author, title, number of pages, whether it's been read, etc
+        - and add it to the library
+    3b. form can be displayed in different ways
+        - shown in sidebar
+        - explore dialogs and modals using `<dialog>
+            - resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
+    3c. tip: will likely encounter issue with submitting form
+        - `submit` input tries to send data to a server
+        - `event.preventDefault();` will come in handy
+            - resource: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+
+4. add a button on each book's display
+    4a. to remove the book from the library
+        - will need to associate DOM elements
+        - with the actual book objects in some way
+        - tip: one solution is giving them a `data-attribute` that corresponds to the unique `id` of the book object
+            - resource: https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes
+
+5. add a button to each book's display
+    5a. to change its `read` status
+        - create a `Book` prototype function
+            - that toggles a book instance's `read` status

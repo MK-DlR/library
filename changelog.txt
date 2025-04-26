@@ -1,5 +1,6 @@
 4/26/25
 
+- Write pseudocode
 - Add gif to files and put in README
 - Copy "book" example into js file
 - Add html skeleton and link style sheet and js file
