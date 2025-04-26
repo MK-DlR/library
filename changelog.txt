@@ -1,5 +1,9 @@
 4/26/25
 
+- Complete step 1a, 1b
+- Create addBookToLibrary function skeleton
+- Create myLibrary array
+- Add emojis to title in html file
 - Write pseudocode
 - Add gif to files and put in README
 - Copy "book" example into js file
