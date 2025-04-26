@@ -1,7 +1,7 @@
 // array to store books
 const myLibrary = [];
 
-// function to create books based on user submitted information
+// book constructor
 function Book(title, author, pages, read) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
@@ -10,14 +10,17 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.uuid = self.crypto.randomUUID();
+  // console.log(this.uuid);
   this.info = function () {
     return `${this.title} by ${this.author}, ${this.pages}, ${read}`;
   };
 }
 
-// function to add book to library array
+// add book to library array
 function addBookToLibrary() {
-  //code
+  myLibrary.push(theHobbit.info()); // temporary test value
+  console.log(myLibrary);
 }
 
 // example book
@@ -28,4 +31,5 @@ const theHobbit = new Book(
   "not read yet"
 );
 
-console.log(theHobbit.info());
+//console.log(theHobbit.info());
+addBookToLibrary(); // output: Array [ "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet" ]

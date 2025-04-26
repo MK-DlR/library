@@ -1,5 +1,8 @@
 4/26/25
 
+- Complete step 1d
+- Add uuid assignment to Book constructor
+- Add test value to addBookToLibrary
 - Complete step 1a, 1b
 - Create addBookToLibrary function skeleton
 - Create myLibrary array
