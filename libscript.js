@@ -1,3 +1,7 @@
+// array to store books
+const myLibrary = [];
+
+// function to create books based on user submitted information
 function Book(title, author, pages, read) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
@@ -11,6 +15,12 @@ function Book(title, author, pages, read) {
   };
 }
 
+// function to add book to library array
+function addBookToLibrary() {
+  //code
+}
+
+// example book
 const theHobbit = new Book(
   "The Hobbit",
   "J.R.R. Tolkien",
