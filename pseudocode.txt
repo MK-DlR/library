@@ -1,7 +1,9 @@
 PROJECT
 1. all book objects to be stored in an array
     1a. create array to store books
+    Done
     1b. create constructor for books
+    Done
     1c. create a separate function
         - that can take some arguments
         - create a book from those arguments
