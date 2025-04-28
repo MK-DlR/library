@@ -16,11 +16,14 @@ Done
 
 2. create a function
     2a. that loops through the array (1) (for...in loop (?))
+    Done
     2b. and displays each book on the page
         - can be displayed in a table
         - or in their own "card"
+    Wip
     2c. tip: manually add a few books to the array
         - so the display can be seen
+    Done
 
 3. add a "new book" button
     3a. that brings up a form 
