@@ -1,5 +1,11 @@
 4/28/25
 
+- Add additional note to pseudocode
+- Add horizontal line styling to bookCards
+- Add basic css to display bookCards
+- Complete step 2b; step 2 fully complete
+- Book info moved inside of bookCards created by displayBooks function
+- Remove placeholder gif from html file
 - Add basic css to display divs
 - Update code to display book covers
 - Add cover images for placeholder books
