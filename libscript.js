@@ -2,7 +2,7 @@
 const myLibrary = [];
 
 // book constructor
-function Book(title, author, pages, published, read, adaptation) {
+function Book(title, author, pages, published, read, adaptation, bookCover) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
   }
@@ -12,16 +12,30 @@ function Book(title, author, pages, published, read, adaptation) {
   this.published = published;
   this.read = read;
   this.adaptation = adaptation;
+  this.bookCover = bookCover || "images/placeholdercover.png";
   this.id = self.crypto.randomUUID();
   this.info = function () {
-    return `${this.title} by ${this.author}, ${this.pages}, published on ${this.published}, ${this.read}, ${this.adaptation}.`;
+    return `<div style="text-align: center;">
+    <img src="${this.bookCover}" alt="${this.title}" style="max-width: 100px; max-height: 200px; margin-bottom: 10px;">
+    <div>${this.title} by ${this.author}<br>${this.pages}<br>Published on ${this.published}<br>${this.read}<br>Has ${this.adaptation} adaptation</div>
+    </div>`;
   };
 }
 
 // add books to library array
-function addBookToLibrary(title, author, pages, published, read, adaptation) {
+function addBookToLibrary(
+  title,
+  author,
+  pages,
+  published,
+  read,
+  adaptation,
+  bookCover
+) {
   // take params, create a book then store it in the array
-  myLibrary.push(new Book(title, author, pages, published, read, adaptation));
+  myLibrary.push(
+    new Book(title, author, pages, published, read, adaptation, bookCover)
+  );
 }
 
 // manually add a few books to the array so the display can be seen
@@ -31,8 +45,9 @@ addBookToLibrary(
   "Chuck Palahniuk",
   "208 pages",
   "August 17, 1996",
-  "read",
-  "movie"
+  "Read",
+  "a movie",
+  "images/fightclubcover.jpg"
 );
 // test book 2
 addBookToLibrary(
@@ -40,8 +55,9 @@ addBookToLibrary(
   "Neil Gaiman",
   "465 pages",
   "June 19, 2001",
-  "read",
-  "tv show"
+  "Read",
+  "a TV show",
+  "images/americangodscover.jpg"
 );
 // test book 3
 addBookToLibrary(
@@ -49,8 +65,9 @@ addBookToLibrary(
   "Philip Pullman",
   "560 pages",
   "October 19, 2017",
-  "unread",
-  "none"
+  "Unread",
+  "no",
+  "images/labellecover.jpg"
 );
 
 // create a function
@@ -60,9 +77,11 @@ addBookToLibrary(
 // or in their own "card"
 
 function displayBooks() {
-  console.table(myLibrary); // full table of test books
-  for (let i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i]); // displaying individual book objects
+  for (const book of myLibrary) {
+    console.log(book);
+    document
+      .getElementById("bookContainer")
+      .insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
   }
 }
 
