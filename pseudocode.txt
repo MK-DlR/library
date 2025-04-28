@@ -20,10 +20,11 @@ Done
     2b. and displays each book on the page
         - can be displayed in a table
         - or in their own "card"
-    Wip
+    Done
     2c. tip: manually add a few books to the array
         - so the display can be seen
     Done
+Done
 
 3. add a "new book" button
     3a. that brings up a form 
@@ -52,4 +53,5 @@ Done
             - that toggles a book instance's `read` status
 
 notes:
+- align bookCards nicely using either flexbox or grid
 - when new book is input by user, that should call the displayBooks function
