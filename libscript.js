@@ -16,7 +16,7 @@ function Book(title, author, pages, published, read, adaptation, bookCover) {
   this.id = self.crypto.randomUUID();
   this.info = function () {
     return `<div style="text-align: center;">
-    <img src="${this.bookCover}" alt="${this.title}" style="width: 100px; height: 150px; margin-bottom: 10px;">
+    <img src="${this.bookCover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 10px;">
     <div>${this.title} by ${this.author}<br>${this.pages}<br>Published on ${this.published}<br>${this.read}<br>Has ${this.adaptation} adaptation</div>
     </div>`;
   };
@@ -69,12 +69,6 @@ addBookToLibrary(
   "no",
   "images/labellecover.jpg"
 );
-
-// create a function
-// that loops through the array (1) (for...in loop (?))
-// and displays each book on the page
-// can be displayed in a table
-// or in their own "card"
 
 function displayBooks() {
   for (const book of myLibrary) {
