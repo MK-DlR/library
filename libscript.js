@@ -14,7 +14,7 @@ function Book(title, author, pages, published, read, adaptation) {
   this.adaptation = adaptation;
   this.id = self.crypto.randomUUID();
   this.info = function () {
-    return `${this.title} by ${this.author}, ${this.pages}, ${this.read}, ${this.movie}.`;
+    return `${this.title} by ${this.author}, ${this.pages}, published on ${this.published}, ${this.read}, ${this.adaptation}.`;
   };
 }
 
@@ -22,5 +22,48 @@ function Book(title, author, pages, published, read, adaptation) {
 function addBookToLibrary(title, author, pages, published, read, adaptation) {
   // take params, create a book then store it in the array
   myLibrary.push(new Book(title, author, pages, published, read, adaptation));
-  console.table(myLibrary);
 }
+
+// manually add a few books to the array so the display can be seen
+// test book 1
+addBookToLibrary(
+  "Fight Club",
+  "Chuck Palahniuk",
+  "208 pages",
+  "August 17, 1996",
+  "read",
+  "movie"
+);
+// test book 2
+addBookToLibrary(
+  "American Gods",
+  "Neil Gaiman",
+  "465 pages",
+  "June 19, 2001",
+  "read",
+  "tv show"
+);
+// test book 3
+addBookToLibrary(
+  "La Belle Sauvage",
+  "Philip Pullman",
+  "560 pages",
+  "October 19, 2017",
+  "unread",
+  "none"
+);
+
+// create a function
+// that loops through the array (1) (for...in loop (?))
+// and displays each book on the page
+// can be displayed in a table
+// or in their own "card"
+
+function displayBooks() {
+  console.table(myLibrary); // full table of test books
+  for (let i = 0; i < myLibrary.length; i++) {
+    console.log(myLibrary[i]); // displaying individual book objects
+  }
+}
+
+displayBooks();
