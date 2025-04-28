@@ -16,7 +16,7 @@ function Book(title, author, pages, published, read, adaptation, bookCover) {
   this.id = self.crypto.randomUUID();
   this.info = function () {
     return `<div style="text-align: center;">
-    <img src="${this.bookCover}" alt="${this.title}" style="max-width: 100px; max-height: 200px; margin-bottom: 10px;">
+    <img src="${this.bookCover}" alt="${this.title}" style="width: 100px; height: 150px; margin-bottom: 10px;">
     <div>${this.title} by ${this.author}<br>${this.pages}<br>Published on ${this.published}<br>${this.read}<br>Has ${this.adaptation} adaptation</div>
     </div>`;
   };
@@ -78,10 +78,10 @@ addBookToLibrary(
 
 function displayBooks() {
   for (const book of myLibrary) {
-    console.log(book);
-    document
-      .getElementById("bookContainer")
-      .insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
+    const bookCard = document.createElement("div");
+    bookCard.classList.add("bookCard");
+    bookCard.insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
+    bookContainer.appendChild(bookCard);
   }
 }
 
