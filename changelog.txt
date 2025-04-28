@@ -1,5 +1,9 @@
 4/28/25
 
+- Complete step 2a, 2c
+- Create displayBooks function to iterate through myLibrary array
+- Re-add test books using addBookToLibrary for step 2
+- Adjust this.info to include publication date
 - Complete step 1c; step 1 fully complete
 - Remove manually created book test values
 - Fix addBookToLibrary functionality 
