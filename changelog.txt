@@ -1,5 +1,12 @@
+4/28/25
+
+- Complete step 1c; step 1 fully complete
+- Remove manually created book test values
+- Fix addBookToLibrary functionality 
+
 4/26/25
 
+- Add additional example book and test values
 - Complete step 1d
 - Add uuid assignment to Book constructor
 - Add test value to addBookToLibrary

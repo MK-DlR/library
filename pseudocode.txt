@@ -8,13 +8,14 @@ PROJECT
         - that can take some arguments
         - create a book from those arguments
         - and store the new book object in the array (push)
-    Wip
+    Done
     1d. all book objects should have a unique id
         - can be created using `crypto.randomUUID()`
     Done
+Done
 
 2. create a function
-    2a. that loops through the array (1)
+    2a. that loops through the array (1) (for...in loop (?))
     2b. and displays each book on the page
         - can be displayed in a table
         - or in their own "card"
@@ -28,7 +29,7 @@ PROJECT
         - and add it to the library
     3b. form can be displayed in different ways
         - shown in sidebar
-        - explore dialogs and modals using `<dialog>
+        - explore dialogs and modals using `<dialog>`
             - resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
     3c. tip: will likely encounter issue with submitting form
         - `submit` input tries to send data to a server
