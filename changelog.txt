@@ -1,5 +1,6 @@
 4/28/25
 
+- Fix filter css compatibility error
 - Add stamp effect to book cover images
 - Add additional note to pseudocode
 - Add horizontal line styling to bookCards
