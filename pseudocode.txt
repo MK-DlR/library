@@ -15,7 +15,7 @@ PROJECT
 Done
 
 2. create a function
-    2a. that loops through the array (1) (for...in loop (?))
+    2a. that loops through the array (1)
     Done
     2b. and displays each book on the page
         - can be displayed in a table
@@ -50,3 +50,6 @@ Done
     5a. to change its `read` status
         - create a `Book` prototype function
             - that toggles a book instance's `read` status
+
+notes:
+- when new book is input by user, that should call the displayBooks function
