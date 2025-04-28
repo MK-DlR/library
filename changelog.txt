@@ -1,5 +1,12 @@
 4/28/25
 
+- Add basic css to display divs
+- Update code to display book covers
+- Add cover images for placeholder books
+- Reformat Book constructor to display book info in a more readable manner
+- Add extra notes to pseudocode
+- displayBooks function now prints info to DOM
+- Create container and bookContainer divs in html
 - Complete step 2a, 2c
 - Create displayBooks function to iterate through myLibrary array
 - Re-add test books using addBookToLibrary for step 2
