@@ -1,1 +1,5 @@
 /* style.css */
+#bookContainer {
+    background-color: lightblue;
+    border: thick solid red;
+}
