@@ -1,5 +1,27 @@
 /* style.css */
+body {
+    background: #fff;
+    color: #444;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+
 #bookContainer {
     background-color: lightblue;
     border: thick solid red;
+}
+
+.bookCard {
+    background-color: #fff;
+    border: thick solid blue;
+    width: 350px;
+    height: 400px;
+    border-radius: 10px;
+    border-left: 0.5em solid #282A38;
+
+    line-height: 30px;
+    background-image: -webkit-linear-gradient(#b7d1e9 1px, transparent 1px);
+    background-image: linear-gradient(#b7d1e9 1px, transparent 1px);
+    -webkit-background-size: 100% 30px;
+    background-size: 100% 30px;
 }
