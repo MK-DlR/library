@@ -81,3 +81,12 @@ function displayBooks() {
 }
 
 displayBooks();
+
+// add a "new book" button
+// that brings up a form
+// that allows users to input the details of the book
+// and add it to the library
+
+// form can be displayed in different ways
+// shown in sidebar
+// or explore dialogs and modals using `<dialog>`
