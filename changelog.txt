@@ -1,3 +1,7 @@
+4/29/25:
+
+- Change bookContainer display to flex with wrap
+
 4/28/25
 
 - Fix filter css compatibility error

@@ -9,6 +9,8 @@ body {
 #bookContainer {
     background-color: lightblue;
     border: thick solid red;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 /* book card styling */
