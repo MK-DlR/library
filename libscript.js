@@ -13,7 +13,7 @@ function Book(title, author, pages, published, read, adaptation, bookCover) {
   this.read = read;
   this.adaptation = adaptation;
   this.bookCover = bookCover || "images/placeholdercover.png";
-  this.id = self.crypto.randomUUID();
+  this.id = self.crypto.randomUUID(); // random uuid for each book
   this.info = function () {
     return `<div style="text-align: center;">
     <img src="${this.bookCover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 10px;">
