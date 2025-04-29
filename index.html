@@ -9,7 +9,47 @@
 <body>
     <div id="container" style="text-align: center;">
         <h2>Test Header</h2>
-        <button class="button button1">Add A Book</button>
+        <!-- modal with form -->
+        <dialog id="bookInput">
+            <form>
+            <p>
+                <label>
+                    <p style="font-weight: bold;">Book Information</p>
+                    <label for="title" style="font-weight: bold;">Title:</label><br>
+                    <input type="text" id="title" name="title" placeholder="Fight Club"><br><br>
+                    <label for="author" style="font-weight: bold;">Author:</label><br>
+                    <input type="text" id="author" name="author" placeholder="Chuck Palahniuk"><br><br>
+                    <label for="pages" style="font-weight: bold;">Pages:</label><br>
+                    <input type="number" pattern="[0-9]+" id="pages" name="pages" placeholder="208"><br><br>
+                    <label for="published" style="font-weight: bold;">Publication Date:</label><br>
+                    <input type="text" id="published" name="published" placeholder="August 17, 1996"><br><br>
+                    <label for="status" style="font-weight: bold;">Read Status:</label><br>
+                        <select id="status" name="status">
+                            <option value="read">Read</option>
+                            <option value="unread">Unread</option>
+                        </select>
+                    </label><br><br>
+                    <label for="adaptation" style="font-weight: bold;">Has Adaptation:</label><br>
+                        <select id="adaptation" name="adaptation">
+                            <option value="none">None</option>
+                            <option value="movie">Movie</option>
+                            <option value="show">TV Show</option>
+                        </select>
+                    </label><br><br>
+                    <label for="cover" style="font-weight: bold;">Book cover:</label><br>
+                        <input type="file" id="cover" name="cover" accept="image/png, image/jpeg" />
+            </p>
+            <div>
+                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button id="confirmBtn" value="default">Confirm</button>
+            </div>
+            </form>
+        </dialog>
+        <p>
+            <button id="addBook">Add A Book</button>
+        </p>
+        <output></output>
+
         <div id="bookContainer">
         </div>
     </div>
