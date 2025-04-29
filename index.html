@@ -11,7 +11,7 @@
         <h2>Test Header</h2>
         <!-- modal with form -->
         <dialog id="bookInput">
-            <form>
+            <form id="userInput">
             <p>
                 <label>
                     <p style="font-weight: bold;">Book Information</p>
@@ -23,15 +23,15 @@
                     <input type="number" pattern="[0-9]+" id="pages" name="pages" placeholder="208"><br><br>
                     <label for="published" style="font-weight: bold;">Publication Date:</label><br>
                     <input type="text" id="published" name="published" placeholder="August 17, 1996"><br><br>
-                    <label for="status" style="font-weight: bold;">Read Status:</label><br>
-                        <select id="status" name="status">
+                    <label for="stats" style="font-weight: bold;">Read stats:</label><br>
+                        <select id="stats" name="stats">
                             <option value="read">Read</option>
                             <option value="unread">Unread</option>
                         </select>
                     </label><br><br>
                     <label for="adaptation" style="font-weight: bold;">Has Adaptation:</label><br>
                         <select id="adaptation" name="adaptation">
-                            <option value="none">None</option>
+                            <option value="no">No</option>
                             <option value="movie">Movie</option>
                             <option value="show">TV Show</option>
                         </select>
