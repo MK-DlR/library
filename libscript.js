@@ -74,7 +74,6 @@ addBookToLibrary(
 document.addEventListener("DOMContentLoaded", function () {
   // get the book container element
   const bookContainer = document.getElementById("bookContainer");
-
   if (!bookContainer) {
     console.error("bookContainer element not found!");
     return;
@@ -103,6 +102,28 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const book of myLibrary) {
       const bookCard = document.createElement("div");
       bookCard.classList.add("bookCard");
+      const crossEmoji = `<div style="text-align: right; margin-left: 130px; display: inline;">
+          <span style="cursor: pointer;" title="delete book">❌</span>
+        </div>`;
+      bookCard.insertAdjacentHTML("afterbegin", crossEmoji);
+
+      const crossElement = bookCard.querySelector("span");
+
+      crossElement.addEventListener("click", function () {
+        bookCard.remove();
+      });
+
+      const checkEmoji = `<div style="text-align: left; margin-right: 130px; display: inline;">
+        <span style="cursor: pointer;" title="toggle read/unread">✔️</span>
+      </div>`;
+      bookCard.insertAdjacentHTML("afterbegin", checkEmoji);
+
+      const checkElement = bookCard.querySelector("span");
+
+      checkElement.addEventListener("click", function () {
+        console.log("hi!");
+      });
+
       bookCard.insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
       bookContainer.appendChild(bookCard);
     }
