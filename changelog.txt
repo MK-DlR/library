@@ -1,5 +1,11 @@
 4/29/25:
 
+- Add button press effect and styling to "add a book" button
+- Make text size slightly larger
+- Change text color to black
+- Add header for top of container with button
+- Create "add a book" button that will call form for user input
+- Begin step 3a
 - Change bookContainer display to flex with wrap
 
 4/28/25
