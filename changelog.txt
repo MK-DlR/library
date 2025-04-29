@@ -1,5 +1,10 @@
 4/29/25:
 
+- Complete step 3a, 3b
+- Add file upload resource to pseudocode
+- Limit page input to numbers
+- Add form inputs inside of modal
+- Change button1 class to addBook id, adjust necessary css targets
 - Change flex justify-content to space-around
 - Adjust bookCard size
 - Consolidate stamp hover code using .stamp:not(:hover)
