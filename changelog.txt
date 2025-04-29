@@ -1,5 +1,6 @@
 4/29/25:
 
+- Add greyscale filter to images, colored on hover
 - Add button press effect and styling to "add a book" button
 - Make text size slightly larger
 - Change text color to black
