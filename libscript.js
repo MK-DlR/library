@@ -97,38 +97,43 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayBooks() {
     // clear existing books first to avoid duplicates
     bookContainer.innerHTML = "";
-
     // add each book to the container
     for (const book of myLibrary) {
       const bookCard = document.createElement("div");
       bookCard.classList.add("bookCard");
+      bookCard.dataset.id = book.id;
+      // X emoji
       const crossEmoji = `<div style="text-align: right; margin-left: 130px; display: inline;">
           <span style="cursor: pointer;" title="delete book">❌</span>
         </div>`;
       bookCard.insertAdjacentHTML("afterbegin", crossEmoji);
-
       const crossElement = bookCard.querySelector("span");
-
+      // X emoji event listener to remove selected card
       crossElement.addEventListener("click", function () {
+        const idToDelete = bookCard.dataset.id;
+        // remove from the array
+        const index = myLibrary.findIndex((book) => book.id === idToDelete);
+        if (index !== -1) {
+          myLibrary.splice(index, 1);
+        }
+        // remove from DOM
         bookCard.remove();
       });
-
+      // check emoji
       const checkEmoji = `<div style="text-align: left; margin-right: 130px; display: inline;">
-        <span style="cursor: pointer;" title="toggle read/unread">✔️</span>
-      </div>`;
+          <span style="cursor: pointer;" title="toggle read/unread">✔️</span>
+        </div>`;
       bookCard.insertAdjacentHTML("afterbegin", checkEmoji);
-
       const checkElement = bookCard.querySelector("span");
-
+      // check emoji event listener to toggle read/unread
       checkElement.addEventListener("click", function () {
         console.log("hi!");
       });
-
+      // adding book info to card
       bookCard.insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
       bookContainer.appendChild(bookCard);
     }
-
-    console.log("Books displayed:", myLibrary.length);
+    console.log("Books displayed:", myLibrary.length); // debugging
   }
 
   // display initial books
@@ -197,3 +202,5 @@ document.addEventListener("DOMContentLoaded", function () {
     bookInput.close("default");
   });
 });
+
+console.table(myLibrary);

@@ -1,5 +1,7 @@
 4/29/25:
 
+- Complete step 4
+- Adjust bookCard deletion function to remove selected item from the array based on its id
 - Fix adaptation value phrasing and capitalization
 - Fix read/unread value capitalization
 - Add check emoji to bookCards and assign eventListener
