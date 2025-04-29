@@ -3,7 +3,7 @@
 - Complete step 3a, 3b
 - Add file upload resource to pseudocode
 - Limit page input to numbers
-- Add form inputs inside of modal
+- Add form inputs inside of modal with invalid input warning
 - Change button1 class to addBook id, adjust necessary css targets
 - Change flex justify-content to space-around
 - Adjust bookCard size
