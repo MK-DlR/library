@@ -70,6 +70,7 @@ addBookToLibrary(
   "images/labellecover.jpg"
 );
 
+// loop through array to display library
 function displayBooks() {
   for (const book of myLibrary) {
     const bookCard = document.createElement("div");
