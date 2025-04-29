@@ -3,6 +3,7 @@ body {
     background: #fff;
     font-family: sans-serif;
     font-size: 15px;
+	margin : 0px;
 }
 
 /* main container */
@@ -12,7 +13,7 @@ body {
 }
 
 /* "add a book" button styling */
-.button1 {
+#addBook {
 	border: none;
 	border-radius: 10px;
 	background-color: white; /* placeholder */
@@ -22,13 +23,12 @@ body {
 	font-size: 16px;
 	text-align: center;
 	text-decoration: none;
-	margin-bottom: 20px;
 	display: inline-block;
 	cursor: pointer;
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.button1:active {
+#addBook:active {
 	background-color: pink; /* placeholder */
 	box-shadow: 0 5px #666;
 	transform: translateY(4px);
@@ -58,7 +58,6 @@ body {
     -webkit-background-size: 100% 30px;
     background-size: 100% 30px;
 }
-
 
 /* stamp background effect for book cover images */
 .stamp {
@@ -101,4 +100,15 @@ body {
 .stamp:not(:hover) {
 	filter: none;
 	-webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5)) grayscale(80%);
+}
+
+/* form within modal */
+#cover {
+	text-align: center;
+}
+
+input:invalid {
+    border-style: solid;
+    border-width: thin;
+    border-color: red;
 }
