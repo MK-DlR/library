@@ -50,7 +50,7 @@ Done
         - with the actual book objects in some way
         - tip: one solution is giving them a `data-attribute` that corresponds to the unique `id` of the book object
             - resource: https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes
-Wip - Needs to actually delete the book entirely; it's currently coming back when a new book is added
+Done
 
 5. add a button to each book's display
     5a. to change its `read` status
