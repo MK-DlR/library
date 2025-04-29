@@ -2,7 +2,7 @@
 const myLibrary = [];
 
 // book constructor
-function Book(title, author, pages, published, read, adaptation, bookCover) {
+function Book(title, author, pages, published, status, adaptation, bookCover) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
   }
@@ -10,14 +10,14 @@ function Book(title, author, pages, published, read, adaptation, bookCover) {
   this.author = author;
   this.pages = pages;
   this.published = published;
-  this.read = read;
+  this.status = status;
   this.adaptation = adaptation;
   this.bookCover = bookCover || "images/placeholdercover.png";
   this.id = self.crypto.randomUUID(); // random uuid for each book
   this.info = function () {
     return `<div style="text-align: center;">
     <img src="${this.bookCover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 10px;">
-    <div>${this.title} by ${this.author}<br>${this.pages}<br>Published on ${this.published}<br>${this.read}<br>Has ${this.adaptation} adaptation</div>
+    <div>${this.title} by ${this.author}<br>${this.pages} pages<br>Published on ${this.published}<br>${this.status}<br>Has ${this.adaptation} adaptation</div>
     </div>`;
   };
 }
@@ -28,13 +28,13 @@ function addBookToLibrary(
   author,
   pages,
   published,
-  read,
+  status,
   adaptation,
   bookCover
 ) {
   // take params, create a book then store it in the array
   myLibrary.push(
-    new Book(title, author, pages, published, read, adaptation, bookCover)
+    new Book(title, author, pages, published, status, adaptation, bookCover)
   );
 }
 
@@ -43,7 +43,7 @@ function addBookToLibrary(
 addBookToLibrary(
   "Fight Club",
   "Chuck Palahniuk",
-  "208 pages",
+  "208",
   "August 17, 1996",
   "Read",
   "a movie",
@@ -53,7 +53,7 @@ addBookToLibrary(
 addBookToLibrary(
   "American Gods",
   "Neil Gaiman",
-  "465 pages",
+  "465",
   "June 19, 2001",
   "Read",
   "a TV show",
@@ -63,7 +63,7 @@ addBookToLibrary(
 addBookToLibrary(
   "La Belle Sauvage",
   "Philip Pullman",
-  "560 pages",
+  "560",
   "October 19, 2017",
   "Unread",
   "no",
@@ -82,11 +82,28 @@ function displayBooks() {
 
 displayBooks();
 
-// add a "new book" button
-// that brings up a form
-// that allows users to input the details of the book
-// and add it to the library
+// modal and form
+const showButton = document.getElementById("addBook");
+const bookInput = document.getElementById("bookInput");
+const outputBox = document.querySelector("output");
+const selectEl = bookInput.querySelector("select");
+const confirmBtn = bookInput.querySelector("#confirmBtn");
 
-// form can be displayed in different ways
-// shown in sidebar
-// or explore dialogs and modals using `<dialog>`
+// bookInput opens modal
+showButton.addEventListener("click", () => {
+  bookInput.showModal();
+});
+
+// cancel closes dialog without submitting
+bookInput.addEventListener("close", (e) => {
+  outputBox.value =
+    bookInput.returnValue === "default"
+      ? "No return value."
+      : `ReturnValue: ${bookInput.returnValue}.`; // check for "default" rather than empty string
+});
+
+// prevent confirm from the default behavior of submitting the form, and close the dialog with the `close()` method, which triggers the "close" event
+confirmBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // don't submit to server
+  bookInput.close(selectEl.value); // Have to send the select box value here
+});
