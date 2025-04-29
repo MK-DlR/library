@@ -1,5 +1,6 @@
 4/29/25:
 
+- Fix read/unread capitalization
 - Add check emoji to bookCards and assign eventListener
 - Begin step 5
 - Add X emoji to bookCards and assign eventListener
