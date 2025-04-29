@@ -31,12 +31,12 @@ Done
         - that allows users to input the details of the book
             - author, title, number of pages, whether it's been read, etc
         - and add it to the library
-    Wip
+    Done
     3b. form can be displayed in different ways
         - shown in sidebar
         - explore dialogs and modals using `<dialog>`
             - resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
-    Wip
+    Done
     3c. tip: will likely encounter issue with submitting form
         - `submit` input tries to send data to a server
         - `event.preventDefault();` will come in handy
@@ -58,3 +58,4 @@ notes:
 - align bookCards nicely using either flexbox or grid
 Done
 - when new book is input by user, that should call the displayBooks function
+- file upload resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file#getting_information_on_selected_files
