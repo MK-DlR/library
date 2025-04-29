@@ -41,6 +41,8 @@ Done
         - `submit` input tries to send data to a server
         - `event.preventDefault();` will come in handy
             - resource: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+    Done
+Done
 
 4. add a button on each book's display
     4a. to remove the book from the library
@@ -58,4 +60,6 @@ notes:
 - align bookCards nicely using either flexbox or grid
 Done
 - when new book is input by user, that should call the displayBooks function
+Done
 - file upload resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file#getting_information_on_selected_files
+Done
