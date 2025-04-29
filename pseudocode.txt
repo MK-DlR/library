@@ -36,6 +36,7 @@ Done
         - shown in sidebar
         - explore dialogs and modals using `<dialog>`
             - resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog
+    Wip
     3c. tip: will likely encounter issue with submitting form
         - `submit` input tries to send data to a server
         - `event.preventDefault();` will come in handy
