@@ -1,5 +1,11 @@
 4/29/25:
 
+- Add form input and submission functionality
+- Change none (adaptation) to no
+- Complete step 3, notes
+- Change status to stats
+- Clear userInput form when cancel or confirm is pressed
+- Add userInput id to form
 - Change bookCover to cover
 - Complete step 3a, 3b
 - Add file upload resource to pseudocode
