@@ -2,7 +2,7 @@
 const myLibrary = [];
 
 // book constructor
-function Book(title, author, pages, published, status, adaptation, bookCover) {
+function Book(title, author, pages, published, status, adaptation, cover) {
   if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
   }
@@ -12,11 +12,11 @@ function Book(title, author, pages, published, status, adaptation, bookCover) {
   this.published = published;
   this.status = status;
   this.adaptation = adaptation;
-  this.bookCover = bookCover || "images/placeholdercover.png";
+  this.cover = cover || "images/placeholdercover.png";
   this.id = self.crypto.randomUUID(); // random uuid for each book
   this.info = function () {
     return `<div style="text-align: center;">
-    <img src="${this.bookCover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 10px;">
+    <img src="${this.cover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 10px;">
     <div>${this.title} by ${this.author}<br>${this.pages} pages<br>Published on ${this.published}<br>${this.status}<br>Has ${this.adaptation} adaptation</div>
     </div>`;
   };
@@ -30,11 +30,11 @@ function addBookToLibrary(
   published,
   status,
   adaptation,
-  bookCover
+  cover
 ) {
   // take params, create a book then store it in the array
   myLibrary.push(
-    new Book(title, author, pages, published, status, adaptation, bookCover)
+    new Book(title, author, pages, published, status, adaptation, cover)
   );
 }
 

@@ -1,5 +1,6 @@
 4/29/25:
 
+- Change bookCover to cover
 - Complete step 3a, 3b
 - Add file upload resource to pseudocode
 - Limit page input to numbers
