@@ -1,5 +1,6 @@
 4/30/25:
 
+- Fix capitalization and spelling issue in modal form
 - Replace header dummy text with real text
 - Add meta_procond_regular font and adjust font sizes
 - Move some css around for better legibility 
