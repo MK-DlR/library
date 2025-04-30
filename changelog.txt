@@ -1,3 +1,9 @@
+4/30/25:
+
+- Upload check and x svg images to files
+- Complete step 5
+- Create Book.prototype.toggle to change read status when check is pressed
+
 4/29/25:
 
 - Complete step 4
