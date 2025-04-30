@@ -1,5 +1,10 @@
 4/30/25:
 
+- Replace header dummy text with real text
+- Add meta_procond_regular font and adjust font sizes
+- Move some css around for better legibility 
+- Add commenting to css and js files
+- Add transition delay to stamp hover
 - Adjust styling for book svgs
 - Add toggle for book svgs depending on read/unread status
 - Replace check svgs with books; remove check files
