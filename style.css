@@ -60,7 +60,8 @@ h2 {
 .bookCard {
     position: relative;
     background-color: #fff;
-    border: thick solid blue; /* placeholder */
+    border: 0.15em solid #282A38;
+	border-left: 0.5em solid #282A38;
     width: 325px;
     height: 400px;
     border-radius: 10px;
@@ -70,7 +71,6 @@ h2 {
     background-size: 100% 30px;
     overflow: hidden;
     padding-left: 20px; /* allows space beside the line */
-	border-left: 0.5em solid #282A38;
 }
 
 /* move book icon to left side of red line */

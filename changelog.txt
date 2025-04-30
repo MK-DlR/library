@@ -1,5 +1,6 @@
 4/30/25:
 
+- Change bookCard border thickness and color
 - Add "holePunch" vertical dots to left side of card
 - Move book icon to left side of red line
 - Add vertical red line to card
