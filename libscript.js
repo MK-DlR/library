@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const iconBar = document.createElement("div");
       iconBar.classList.add("icon-bar");
 
-      // ✔️ icon
+      // book icons
       const bookIcon = document.createElement("span");
       bookIcon.title = "toggle read/unread";
       bookIcon.style.cursor = "pointer";
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "images/book-open-variant.svg"
           : "images/book-open-variant-outline.svg"
       }" class="${book.stats === "Read" ? "book-bold" : "book-outline"}">`;
-
+      // toggle read/unread status
       bookIcon.addEventListener("click", function () {
         book.toggle();
       });
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       crossIcon.title = "delete book";
       crossIcon.style.cursor = "pointer";
       crossIcon.innerHTML = `<img src="images/alpha-x-box-outline.svg" class="cross" height="25px" width="auto">`;
-
+      // remove book
       crossIcon.addEventListener("click", function () {
         const idToDelete = bookCard.dataset.id;
         const index = myLibrary.findIndex((book) => book.id === idToDelete);
@@ -149,8 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Books displayed:", myLibrary.length); // debugging
   }
 
-  // toggle book's read/unread status
-
+  // prototype function to toggle book's read/unread status
   Book.prototype.toggle = function () {
     if (this.stats === "Read") {
       this.stats = "Unread";
