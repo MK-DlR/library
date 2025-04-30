@@ -1,5 +1,10 @@
 4/30/25:
 
+- Adjust styling for book svgs
+- Add toggle for book svgs depending on read/unread status
+- Replace check svgs with books; remove check files
+- Upload book svgs
+- Create icon bar to hold book and x images in
 - Add button press css effect to x and check images
 - Change check emoji to svg image and add green filter via css
 - Change x emoji to svg image and add red filter via css
