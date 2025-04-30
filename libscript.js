@@ -97,44 +97,68 @@ document.addEventListener("DOMContentLoaded", function () {
   function displayBooks() {
     // clear existing books first to avoid duplicates
     bookContainer.innerHTML = "";
+
     // add each book to the container
     for (const book of myLibrary) {
       const bookCard = document.createElement("div");
       bookCard.classList.add("bookCard");
       bookCard.dataset.id = book.id;
-      // X emoji
+
+      // ❌ emoji
       const crossEmoji = `<div style="text-align: right; margin-left: 130px; display: inline;">
           <span style="cursor: pointer;" title="delete book">❌</span>
         </div>`;
       bookCard.insertAdjacentHTML("afterbegin", crossEmoji);
       const crossElement = bookCard.querySelector("span");
-      // X emoji event listener to remove selected card
+
+      // ❌ emoji event listener to remove selected card
       crossElement.addEventListener("click", function () {
         const idToDelete = bookCard.dataset.id;
-        // remove from the array
+
+        // remove selected book from the array
         const index = myLibrary.findIndex((book) => book.id === idToDelete);
         if (index !== -1) {
           myLibrary.splice(index, 1);
         }
-        // remove from DOM
+
+        // remove selected book from DOM
         bookCard.remove();
       });
-      // check emoji
+
+      // ✔️ emoji
       const checkEmoji = `<div style="text-align: left; margin-right: 130px; display: inline;">
           <span style="cursor: pointer;" title="toggle read/unread">✔️</span>
         </div>`;
       bookCard.insertAdjacentHTML("afterbegin", checkEmoji);
       const checkElement = bookCard.querySelector("span");
-      // check emoji event listener to toggle read/unread
+
+      // ✔️ emoji event listener to toggle read/unread
       checkElement.addEventListener("click", function () {
         console.log("hi!");
+        book.toggle();
       });
+
       // adding book info to card
       bookCard.insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
       bookContainer.appendChild(bookCard);
     }
     console.log("Books displayed:", myLibrary.length); // debugging
   }
+
+  // toggle book's read/unread status
+
+  Book.prototype.toggle = function () {
+    if (this.stats === "Read") {
+      this.stats = "Unread";
+      console.log("read --> unread");
+    } else if (this.stats === "Unread") {
+      this.stats = "Read";
+      console.log("unread --> read");
+    } else {
+      console.log("Error");
+    }
+    displayBooks();
+  };
 
   // display initial books
   displayBooks();
