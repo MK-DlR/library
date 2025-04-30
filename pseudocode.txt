@@ -59,6 +59,7 @@ Done
 Done
 
 6. add general final colors and styling to page
+Wip
 
 notes:
 - align bookCards nicely using either flexbox or grid
