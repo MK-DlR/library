@@ -104,14 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
       bookCard.classList.add("bookCard");
       bookCard.dataset.id = book.id;
 
-      // ❌ emoji
+      // ❌ svg
       const crossEmoji = `<div style="text-align: right; margin-left: 130px; display: inline;">
-          <span style="cursor: pointer;" title="delete book">❌</span>
+          <span style="cursor: pointer;" title="delete book"><img src="images/alpha-x-box-outline.svg" class="cross" height="25px" width="auto";></span>
         </div>`;
       bookCard.insertAdjacentHTML("afterbegin", crossEmoji);
       const crossElement = bookCard.querySelector("span");
 
-      // ❌ emoji event listener to remove selected card
+      // ❌ svg event listener to remove selected card
       crossElement.addEventListener("click", function () {
         const idToDelete = bookCard.dataset.id;
 
@@ -125,14 +125,14 @@ document.addEventListener("DOMContentLoaded", function () {
         bookCard.remove();
       });
 
-      // ✔️ emoji
+      // ✔️ svg
       const checkEmoji = `<div style="text-align: left; margin-right: 130px; display: inline;">
-          <span style="cursor: pointer;" title="toggle read/unread">✔️</span>
+          <span style="cursor: pointer;" title="toggle read/unread"><img src="images/check-bold.svg" class="check-filled" height="25px" width="auto";></span>
         </div>`;
       bookCard.insertAdjacentHTML("afterbegin", checkEmoji);
       const checkElement = bookCard.querySelector("span");
 
-      // ✔️ emoji event listener to toggle read/unread
+      // ✔️ svg event listener to toggle read/unread
       checkElement.addEventListener("click", function () {
         console.log("hi!");
         book.toggle();
