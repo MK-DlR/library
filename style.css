@@ -8,11 +8,14 @@
     font-style: normal;
 }
 
-body {
-    background: #fff;
-    font-family: 'meta_procond_regular';
+* {
+	font-family: 'meta_procond_regular';
     font-size: 18px;
-	margin : 0px;
+}
+
+body {
+    background: lightblue;
+	margin: 0px;
 }
 
 h2 {
@@ -21,19 +24,21 @@ h2 {
 
 /* main container */
 #container {
-	background-color: lightgreen; /* placeholder */
-	border: thick solid purple; /* placeholder */
+	background-color: #f39c6a;
+	padding-top: 10px;
 }
 
 /* "add a book" button styling */
 #addBook {
 	border: none;
 	border-radius: 10px;
-	background-color: white; /* placeholder */
-	color: black; 
-	border: 2px solid lightsalmon; /* placeholder */
+	background-color: #facc77;  /* #facc77 */
+	color: #2a3a56;
+	border: 2px solid white; 
+	margin-bottom: 20px;
 	padding: 15px 32px;
 	font-size: 16px;
+	font-weight: bold;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -42,26 +47,28 @@ h2 {
 }
 
 #addBook:active {
-	background-color: pink; /* placeholder */
-	box-shadow: 0 5px #666;
+	background-color: #2a3a56;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 	transform: translateY(4px);
+	color: #facc77;
 }
 
 /* container to hold all created books */
 #bookContainer {
-    background-color: lightblue; /* placeholder */
-    border: thick solid red; /* placeholder */
+    background-color: lightblue; 
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
+	padding-top: 20px;
+	border-top: solid thick #2a3a56;
 }
 
 /* book card styling */
 .bookCard {
     position: relative;
     background-color: #fff;
-    border: 0.15em solid #282A38;
-	border-left: 0.5em solid #282A38;
+    border: 0.15em solid #2a3a56;
+	border-left: 0.5em solid #2a3a56;
     width: 325px;
     height: 400px;
     border-radius: 10px;
@@ -71,6 +78,7 @@ h2 {
     background-size: 100% 30px;
     overflow: hidden;
     padding-left: 20px; /* allows space beside the line */
+	margin-bottom: 20px;
 }
 
 /* move book icon to left side of red line */
@@ -101,11 +109,11 @@ h2 {
 	content: "";
 	border-radius: 50%;
 	border: solid thin gray;
-	height: 20px; /* Changed */
-	width: 20px; /* Changed */
+	height: 20px; 
+	width: 20px; 
 	background-color: #fff;
-	position: absolute; /* Added */
-	left: -170px; /* Added */
+	position: absolute; 
+	left: -170px; 
 }
 
 .holePunch1::before {
@@ -123,7 +131,7 @@ h2 {
 .holePunch1,
 .holePunch2,
 .holePunch3 {
-	position: relative; /* Added */
+	position: relative; 
 }
 
 /* stamp background effect for book cover images */
