@@ -59,7 +59,7 @@ Done
 Done
 
 6. add general final colors and styling to page
-Wip
+Done
 
 notes:
 - align bookCards nicely using either flexbox or grid
@@ -68,3 +68,6 @@ Done
 Done
 - file upload resource: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/file#getting_information_on_selected_files
 Done
+
+future thoughts:
+- add a button and "shelf" for video games, podcasts, etc?
