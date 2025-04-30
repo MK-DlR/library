@@ -94,6 +94,38 @@ h2 {
     z-index: 1;
 }
 
+/* vertical dots */
+.holePunch1::before,
+.holePunch2::before,
+.holePunch3::before {
+	content: "";
+	border-radius: 50%;
+	border: solid thin gray;
+	height: 20px; /* Changed */
+	width: 20px; /* Changed */
+	background-color: #fff;
+	position: absolute; /* Added */
+	left: -170px; /* Added */
+}
+
+.holePunch1::before {
+	top: 35px;
+}
+
+.holePunch2::before {
+	top: 185px;
+}
+
+.holePunch3::before {
+	top: 335px;
+}
+
+.holePunch1,
+.holePunch2,
+.holePunch3 {
+	position: relative; /* Added */
+}
+
 /* stamp background effect for book cover images */
 .stamp {
 	width: 280px;

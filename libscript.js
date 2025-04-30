@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const crossIcon = document.createElement("span");
       crossIcon.title = "delete book";
       crossIcon.style.cursor = "pointer";
-      crossIcon.innerHTML = `<img src="images/alpha-x-box-outline.svg" class="cross" height="25px" width="auto">`;
+      crossIcon.innerHTML = `<img src="images/alpha-x-box-outline.svg" class="cross">`;
       // remove book
       crossIcon.addEventListener("click", function () {
         const idToDelete = bookCard.dataset.id;
@@ -142,9 +142,21 @@ document.addEventListener("DOMContentLoaded", function () {
       const verticalLine = document.createElement("div");
       verticalLine.classList.add("verticalLine");
 
+      // vertical dots
+      const holePunch1 = document.createElement("span");
+      holePunch1.classList.add("holePunch1");
+      const holePunch2 = document.createElement("span");
+      holePunch2.classList.add("holePunch2");
+      const holePunch3 = document.createElement("span");
+      holePunch3.classList.add("holePunch3");
+
+      // appending elements to book card
       iconBar.appendChild(bookIcon);
       iconBar.appendChild(crossIcon);
       bookCard.appendChild(verticalLine);
+      bookCard.appendChild(holePunch1);
+      bookCard.appendChild(holePunch2);
+      bookCard.appendChild(holePunch3);
       bookCard.appendChild(iconBar);
 
       // book info

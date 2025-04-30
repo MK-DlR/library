@@ -1,5 +1,6 @@
 4/30/25:
 
+- Add "holePunch" vertical dots to left side of card
 - Move book icon to left side of red line
 - Add vertical red line to card
 - Move x styling from js to css
