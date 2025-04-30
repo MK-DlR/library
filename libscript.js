@@ -104,44 +104,48 @@ document.addEventListener("DOMContentLoaded", function () {
       bookCard.classList.add("bookCard");
       bookCard.dataset.id = book.id;
 
-      // ❌ svg
-      const crossEmoji = `<div style="text-align: right; margin-left: 130px; display: inline;">
-          <span style="cursor: pointer;" title="delete book"><img src="images/alpha-x-box-outline.svg" class="cross" height="25px" width="auto";></span>
-        </div>`;
-      bookCard.insertAdjacentHTML("afterbegin", crossEmoji);
-      const crossElement = bookCard.querySelector("span");
+      // create icon bar
+      const iconBar = document.createElement("div");
+      iconBar.classList.add("icon-bar");
 
-      // ❌ svg event listener to remove selected card
-      crossElement.addEventListener("click", function () {
+      // ✔️ icon
+      const bookIcon = document.createElement("span");
+      bookIcon.title = "toggle read/unread";
+      bookIcon.style.cursor = "pointer";
+      bookIcon.innerHTML = `<img src="${
+        book.stats === "Read"
+          ? "images/book-open-variant.svg"
+          : "images/book-open-variant-outline.svg"
+      }" class="${book.stats === "Read" ? "book-bold" : "book-outline"}">`;
+
+      bookIcon.addEventListener("click", function () {
+        book.toggle();
+      });
+
+      // ❌ icon
+      const crossIcon = document.createElement("span");
+      crossIcon.title = "delete book";
+      crossIcon.style.cursor = "pointer";
+      crossIcon.innerHTML = `<img src="images/alpha-x-box-outline.svg" class="cross" height="25px" width="auto">`;
+
+      crossIcon.addEventListener("click", function () {
         const idToDelete = bookCard.dataset.id;
-
-        // remove selected book from the array
         const index = myLibrary.findIndex((book) => book.id === idToDelete);
         if (index !== -1) {
           myLibrary.splice(index, 1);
         }
-
-        // remove selected book from DOM
         bookCard.remove();
       });
 
-      // ✔️ svg
-      const checkEmoji = `<div style="text-align: left; margin-right: 130px; display: inline;">
-          <span style="cursor: pointer;" title="toggle read/unread"><img src="images/check-bold.svg" class="check-filled" height="25px" width="auto";></span>
-        </div>`;
-      bookCard.insertAdjacentHTML("afterbegin", checkEmoji);
-      const checkElement = bookCard.querySelector("span");
+      iconBar.appendChild(bookIcon);
+      iconBar.appendChild(crossIcon);
+      bookCard.appendChild(iconBar);
 
-      // ✔️ svg event listener to toggle read/unread
-      checkElement.addEventListener("click", function () {
-        console.log("hi!");
-        book.toggle();
-      });
-
-      // adding book info to card
+      // book info
       bookCard.insertAdjacentHTML("beforeend", `<p>${book.info()}</p>`);
       bookContainer.appendChild(bookCard);
     }
+
     console.log("Books displayed:", myLibrary.length); // debugging
   }
 
