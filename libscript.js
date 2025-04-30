@@ -16,7 +16,7 @@ function Book(title, author, pages, published, stats, adaptation, cover) {
   this.id = self.crypto.randomUUID(); // random uuid for each book
   this.info = function () {
     return `<div style="text-align: center;">
-    <img src="${this.cover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 10px;">
+    <img src="${this.cover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 20px; margin-top: -15px">
     <div>${this.title} by ${this.author}<br>${this.pages} pages<br>Published on ${this.published}<br>${this.stats}<br>Has ${this.adaptation} adaptation</div>
     </div>`;
   };
