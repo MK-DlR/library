@@ -1,5 +1,9 @@
 4/30/25:
 
+- Add future ideas to pseudocode
+- Complete step 6
+- Add styling colors and css tweaks
+- Re-order cancel and confirm form buttons
 - Adjust spacing above and below book cover image
 - Change bookCard border thickness and color
 - Add "holePunch" vertical dots to left side of card
