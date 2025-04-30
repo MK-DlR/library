@@ -102,6 +102,33 @@ body {
 	-webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5)) grayscale(80%);
 }
 
+.cross {
+	filter: 
+		invert(25%) 
+		sepia(90%) 
+		saturate(7469%) 
+		hue-rotate(359deg) 
+		brightness(90%) 
+		contrast(127%);
+}
+
+.check-filled,
+.check-outline {
+	filter: 
+	invert(54%) 
+	sepia(93%) 
+	saturate(2724%) 
+	hue-rotate(60deg) 
+	brightness(97%) 
+	contrast(82%);
+}
+
+.cross:active,
+.check-filled:active,
+.check-outline:active {
+	transform: translateY(4px);
+}
+
 /* form within modal */
 #cover {
 	text-align: center;
