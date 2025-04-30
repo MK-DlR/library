@@ -56,7 +56,7 @@ Done
     5a. to change its `read` status
         - create a `Book` prototype function
             - that toggles a book instance's `read` status
-Wip - Added but has no actual functionality or prototype function yet
+Done
 
 6. add general final colors and styling to page
 
