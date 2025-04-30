@@ -1,5 +1,8 @@
 4/30/25:
 
+- Add button press css effect to x and check images
+- Change check emoji to svg image and add green filter via css
+- Change x emoji to svg image and add red filter via css
 - Upload check and x svg images to files
 - Complete step 5
 - Create Book.prototype.toggle to change read status when check is pressed
