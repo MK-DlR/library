@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // clear existing books first to avoid duplicates
     bookContainer.innerHTML = "";
 
-    // add each book to the container
+    // add each book to the container on its own card
     for (const book of myLibrary) {
       const bookCard = document.createElement("div");
       bookCard.classList.add("bookCard");
@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "images/book-open-variant.svg"
           : "images/book-open-variant-outline.svg"
       }" class="${book.stats === "Read" ? "book-bold" : "book-outline"}">`;
+      bookIcon.classList.add("book-icon-left");
       // toggle read/unread status
       bookIcon.addEventListener("click", function () {
         book.toggle();
@@ -137,8 +138,13 @@ document.addEventListener("DOMContentLoaded", function () {
         bookCard.remove();
       });
 
+      // vertical line
+      const verticalLine = document.createElement("div");
+      verticalLine.classList.add("verticalLine");
+
       iconBar.appendChild(bookIcon);
       iconBar.appendChild(crossIcon);
+      bookCard.appendChild(verticalLine);
       bookCard.appendChild(iconBar);
 
       // book info

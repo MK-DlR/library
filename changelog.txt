@@ -1,5 +1,8 @@
 4/30/25:
 
+- Move book icon to left side of red line
+- Add vertical red line to card
+- Move x styling from js to css
 - Fix capitalization and spelling issue in modal form
 - Replace header dummy text with real text
 - Add meta_procond_regular font and adjust font sizes
