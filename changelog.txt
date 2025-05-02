@@ -1,3 +1,7 @@
+5/2/25:
+
+- Add project goals to README
+
 4/30/25:
 
 - Add future ideas to pseudocode
