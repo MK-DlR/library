@@ -71,3 +71,6 @@ Done
 
 future thoughts:
 - add a button and "shelf" for video games, podcasts, etc?
+
+CLASS UPDATE:
+1. refactor to use class instead of plain constructors
