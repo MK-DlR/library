@@ -1,3 +1,11 @@
+5/9/25:
+
+- Refactor Book to use class instead of plain constructors
+
+5/8/25:
+
+- Add class update to do in pseudocode
+
 5/2/25:
 
 - Add project goals to README

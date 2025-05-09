@@ -1,25 +1,40 @@
 // array to store books
 const myLibrary = [];
 
-// book constructor
-function Book(title, author, pages, published, stats, adaptation, cover) {
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor");
+// refactored book constructor using class
+class Book {
+  constructor(title, author, pages, published, stats, adaptation, cover) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.published = published;
+    this.stats = stats;
+    this.adaptation = adaptation;
+    this.cover = cover || "images/placeholdercover.png";
+    this.id = self.crypto.randomUUID(); // random uuid for each book
   }
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.published = published;
-  this.stats = stats;
-  this.adaptation = adaptation;
-  this.cover = cover || "images/placeholdercover.png";
-  this.id = self.crypto.randomUUID(); // random uuid for each book
-  this.info = function () {
+  // methods here
+  info() {
     return `<div style="text-align: center;">
     <img src="${this.cover}" alt="${this.title}" class="stamp" style="width: 103px; height: 155px; margin-bottom: 20px; margin-top: -15px">
     <div>${this.title} by ${this.author}<br>${this.pages} pages<br>Published on ${this.published}<br>${this.stats}<br>Has ${this.adaptation} adaptation</div>
     </div>`;
-  };
+  }
+
+  toggle() {
+    // function to toggle book's read/unread status
+    if (this.stats === "Read") {
+      this.stats = "Unread";
+      console.log("read --> unread");
+    } else if (this.stats === "Unread") {
+      this.stats = "Read";
+      console.log("unread --> read");
+    } else {
+      console.log("Error");
+    }
+    // displayBooks();
+    return this.stats;
+  }
 }
 
 // add books to library array
@@ -121,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // toggle read/unread status
       bookIcon.addEventListener("click", function () {
         book.toggle();
+        displayBooks();
       });
 
       // ❌ icon
@@ -166,20 +182,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     console.log("Books displayed:", myLibrary.length); // debugging
   }
-
-  // prototype function to toggle book's read/unread status
-  Book.prototype.toggle = function () {
-    if (this.stats === "Read") {
-      this.stats = "Unread";
-      console.log("read --> unread");
-    } else if (this.stats === "Unread") {
-      this.stats = "Read";
-      console.log("unread --> read");
-    } else {
-      console.log("Error");
-    }
-    displayBooks();
-  };
 
   // display initial books
   displayBooks();
