@@ -1,3 +1,8 @@
+5/31/25:
+
+- Set read/unread stats to be automatically set to unread when adding a new book
+- Create libraryValidation branch to add form validation via js
+
 5/9/25:
 
 - Refactor Book to use class instead of plain constructors
