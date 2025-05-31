@@ -99,7 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const bookInput = document.getElementById("bookInput");
   const outputBox = document.querySelector("output");
   const confirmBtn = document.querySelector("#confirmBtn");
-  const userInputForm = document.getElementById("userInput"); // store the form reference once
+  // store the form reference once
+  const userInputForm = document.getElementById("userInput");
+
+  // get form fields for validation
+  const titleField = document.getElementById("title");
+  const authorField = document.getElementById("author");
+  const pagesField = document.getElementById("pages");
+  const publishedField = document.getElementById("published");
 
   // check if all elements exist
   if (!showButton) console.error("addBook button not found!");
@@ -107,6 +114,100 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!outputBox) console.error("output element not found!");
   if (!confirmBtn) console.error("confirmBtn button not found!");
   if (!userInputForm) console.error("userInput form not found!");
+
+  // set up realtime validation for each field
+  function setupFieldValidation() {
+    // title validation
+    if (titleField) {
+      titleField.addEventListener("input", () => {
+        if (titleField.validity.valueMissing) {
+          titleField.setCustomValidity("Title is required");
+        } else if (titleField.validity.tooShort) {
+          titleField.setCustomValidity(
+            "Title must be at least 1 character long"
+          );
+        } else {
+          titleField.setCustomValidity("");
+        }
+        titleField.reportValidity();
+      });
+
+      titleField.addEventListener("blur", () => {
+        titleField.reportValidity();
+      });
+    }
+
+    // author validation
+    if (authorField) {
+      authorField.addEventListener("input", () => {
+        if (authorField.validity.valueMissing) {
+          authorField.setCustomValidity("Author is required");
+        } else if (authorField.validity.tooShort) {
+          authorField.setCustomValidity(
+            "Author must be at least 1 character long"
+          );
+        } else {
+          authorField.setCustomValidity("");
+        }
+        authorField.reportValidity();
+      });
+
+      authorField.addEventListener("blur", () => {
+        authorField.reportValidity();
+      });
+    }
+
+    // pages validation
+    if (pagesField) {
+      pagesField.addEventListener("input", () => {
+        if (pagesField.validity.valueMissing) {
+          pagesField.setCustomValidity("Number of pages is required");
+        } else if (pagesField.validity.rangeUnderflow) {
+          pagesField.setCustomValidity("Number of pages must be at least 1");
+        } else if (pagesField.validity.badInput) {
+          pagesField.setCustomValidity("Please enter a valid number");
+        } else {
+          pagesField.setCustomValidity("");
+        }
+        pagesField.reportValidity();
+      });
+
+      pagesField.addEventListener("blur", () => {
+        pagesField.reportValidity();
+      });
+    }
+
+    // publication date validation
+    if (publishedField) {
+      publishedField.addEventListener("input", () => {
+        if (publishedField.validity.valueMissing) {
+          publishedField.setCustomValidity("Publication date is required");
+        } else {
+          publishedField.setCustomValidity("");
+        }
+        publishedField.reportValidity();
+      });
+
+      publishedField.addEventListener("blur", () => {
+        publishedField.reportValidity();
+      });
+    }
+  }
+
+  // validate all fields before submission
+  function validateAllFields() {
+    let isValid = true;
+    const fields = [titleField, authorField, pagesField, publishedField];
+
+    fields.forEach((field) => {
+      if (field && !field.checkValidity()) {
+        field.reportValidity();
+        isValid = false;
+      }
+    });
+
+    return isValid;
+  }
 
   // loop through array to display library
   function displayBooks() {
@@ -186,6 +287,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // display initial books
   displayBooks();
 
+  // set up validation when DOM is ready
+  setupFieldValidation();
+
   // bookInput opens modal
   showButton.addEventListener("click", () => {
     bookInput.showModal();
@@ -195,7 +299,15 @@ document.addEventListener("DOMContentLoaded", function () {
   bookInput.addEventListener("close", (e) => {
     // make sure form exists before resetting
     if (userInputForm) {
-      userInputForm.reset(); // clear form input
+      // clear form input
+      userInputForm.reset();
+      // clear any custom validation messages
+      const fields = [titleField, authorField, pagesField, publishedField];
+      fields.forEach((field) => {
+        if (field) {
+          field.setCustomValidity("");
+        }
+      });
     } else {
       console.error("Cannot reset form - userInput form not found!");
     }
@@ -205,17 +317,22 @@ document.addEventListener("DOMContentLoaded", function () {
   confirmBtn.addEventListener("click", (event) => {
     event.preventDefault(); // don't submit to server
 
-    // collect form data
-    const title = document.getElementById("title")?.value || "Untitled";
-    const author = document.getElementById("author")?.value || "Unknown";
-    const pages = document.getElementById("pages")?.value || "0";
-    const published = document.getElementById("published")?.value || "Unknown";
-    const stats = document.getElementById("stats")?.value || "Unread";
-    const adaptation = document.getElementById("adaptation")?.value || "no";
+    // validate all fields first
+    if (!validateAllFields()) {
+      console.log("Form validation failed");
+      // stop here if validation fails
+      return;
+    }
+
+    // collect form data if validation passes
+    const title = document.getElementById("title")?.value;
+    const author = document.getElementById("author")?.value;
+    const pages = document.getElementById("pages")?.value;
+    const published = document.getElementById("published")?.value;
+    const stats = document.getElementById("stats")?.value;
+    const adaptation = document.getElementById("adaptation")?.value;
     const coverInput = document.getElementById("cover");
     let coverPath = "images/placeholdercover.png"; // default cover
-
-    // validate form data
 
     console.log("Form data collected:", {
       title,

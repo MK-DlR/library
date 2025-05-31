@@ -1,5 +1,7 @@
 5/31/25:
 
+- Add form validation for title, author, page, and publication date
+- Fix cancel button not allowing user to exit form if all fields weren't filled out
 - Adjust publication format and add date picker
 - Set title, author, page, and publication date inputs to required
 - Set read/unread stats to be automatically set to unread when adding a new book

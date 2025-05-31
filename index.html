@@ -16,11 +16,11 @@
                 <label>
                     <p style="font-weight: bold;">Book Information</p>
                     <label for="title" style="font-weight: bold;">Title:</label><br>
-                    <input type="text" id="title" name="title" placeholder="Fight Club" required><br><br>
+                    <input type="text" id="title" name="title" placeholder="Fight Club" minlength="1" required><br><br>
                     <label for="author" style="font-weight: bold;">Author:</label><br>
-                    <input type="text" id="author" name="author" placeholder="Chuck Palahniuk" required><br><br>
+                    <input type="text" id="author" name="author" placeholder="Chuck Palahniuk" minlength="1" required><br><br>
                     <label for="pages" style="font-weight: bold;">Pages:</label><br>
-                    <input type="number" pattern="[0-9]+" id="pages" name="pages" placeholder="208" required><br><br>
+                    <input type="number" pattern="[0-9]+" id="pages" name="pages" placeholder="208" min="1" required><br><br>
                     <label for="published" style="font-weight: bold;">Publication Date:</label><br>
                     <input type="date" id="published" name="published" required><br><br>
                     <label for="stats" style="font-weight: bold;">Read Status:</label><br>
@@ -41,7 +41,7 @@
             </p>
             <div>
                 <button id="confirmBtn" value="default">Confirm</button>
-                <button value="cancel" formmethod="dialog">Cancel</button>
+                <button value="cancel" formmethod="dialog" formnovalidate>Cancel</button>
             </div>
             </form>
         </dialog>
