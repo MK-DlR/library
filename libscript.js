@@ -59,7 +59,7 @@ addBookToLibrary(
   "Fight Club",
   "Chuck Palahniuk",
   "208",
-  "August 17, 1996",
+  "1996-08-17",
   "Read",
   "a movie",
   "images/fightclubcover.jpg"
@@ -69,7 +69,7 @@ addBookToLibrary(
   "American Gods",
   "Neil Gaiman",
   "465",
-  "June 19, 2001",
+  "2001-06-19",
   "Read",
   "a TV show",
   "images/americangodscover.jpg"
@@ -79,7 +79,7 @@ addBookToLibrary(
   "La Belle Sauvage",
   "Philip Pullman",
   "560",
-  "October 19, 2017",
+  "2017-10-19",
   "Unread",
   "no",
   "images/labellecover.jpg"
@@ -214,6 +214,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const adaptation = document.getElementById("adaptation")?.value || "no";
     const coverInput = document.getElementById("cover");
     let coverPath = "images/placeholdercover.png"; // default cover
+
+    // validate form data
 
     console.log("Form data collected:", {
       title,

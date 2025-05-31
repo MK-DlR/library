@@ -1,5 +1,7 @@
 5/31/25:
 
+- Adjust publication format and add date picker
+- Set title, author, page, and publication date inputs to required
 - Set read/unread stats to be automatically set to unread when adding a new book
 - Create libraryValidation branch to add form validation via js
 
